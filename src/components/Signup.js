@@ -2,6 +2,9 @@ import React from 'react'
 import { useState, useRef } from 'react';
 import classes from './Signup.module.css';
 import pexel from '../asset/pexel.jpg';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { authActions } from '../store/auth-slice';
 
 const Signup = () => {
 
@@ -9,6 +12,8 @@ const Signup = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const hasAccountHandler = () => {
@@ -52,6 +57,8 @@ const Signup = () => {
 
             if (respense.ok) {
                 localStorage.setItem('idToken', JSON.stringify(data));
+                dispatch(authActions.login());
+                navigate('/home');
             } else {
                 throw data.error;
             }
@@ -66,8 +73,8 @@ const Signup = () => {
                 backgroundImage: `url(${pexel})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",
                 margin: 'auto', height: 'auto', borderRadius: 6
             }} onSubmit={loginFormHandler}>
-                {/* <div className={classes.title}>Welcome to mail box client</div> */}
-                <div className={classes.title}>{hasAccount ? 'LOGIN' : 'SIGN UP'}</div>
+                <div className={classes.head}><h3>MAIL BOX CLIENT</h3></div>
+                <div className={classes.title}>{hasAccount ? <h5>LOGIN</h5> : <h5>SIGN UP</h5> }</div>
                 <input type='email' placeholder='Email' ref={emailRef} required />
                 <input
                     type='password'
