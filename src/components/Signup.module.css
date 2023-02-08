@@ -6,17 +6,24 @@
   }
   
   .form {
-    border: 2px solid black;
+    /* border: 2px solid brown; */
     padding: 40px;
     border-radius: 5px;
-    box-shadow: 0 0 10px black;
+    /* box-shadow: 0 0 50px brown; */
   }
   
   .form .title {
     text-align: center;
+    /* margin-top: 10px; */
     margin-bottom: 20px;
     font-size: 40px;
     font-weight: bold;
+    color: purple;
+  }
+
+  .form .img {
+    height: 100px;
+    width: 100px;
   }
   
   .form input {
@@ -25,6 +32,9 @@
     padding: 10px 0 10px 5px;
     margin: 15px 0 15px 0;
     width: 100%;
+    border-radius: 15px;
+    border-color: white;
+    color: purple;
   }
   
   .button {
@@ -37,6 +47,9 @@
     padding: 8px 0 8px 0;
     border-radius: 25px;
     font-size: 18px;
+    border-color: purple;
+    color: white;
+    background-color: purple;
   }
   
   .hasAccount {
