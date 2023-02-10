@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import classes from './Compose.module.css';
-// import { addMail } from '../store/mail-actions';
+import { addMail } from '../store/mail-actions';
 
 const Compose = () => {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const emailRef = useRef();
   const titleRef = useRef();
   
@@ -21,11 +21,11 @@ const Compose = () => {
     setEditorState(editorState);
   };
 
-//   const clearInputFields = () => {
-//     emailRef.current.value = '';
-//     titleRef.current.value = '';
-//     setEditorState(null);
-//   };
+  const clearInputFields = () => {
+    emailRef.current.value = '';
+    titleRef.current.value = '';
+    setEditorState(null);
+  };
 
   const sendMailHandler = async (event) => {
     event.preventDefault();
@@ -35,7 +35,7 @@ const Compose = () => {
       title: titleRef.current.value,
       text: editorState.getCurrentContent().getPlainText(),
     };
-    // dispatch(addMail(mailData, clearInputFields));
+    dispatch(addMail(mailData, clearInputFields));
   };
 
   return (
