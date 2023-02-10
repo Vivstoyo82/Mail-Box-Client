@@ -58,7 +58,9 @@ const Signup = () => {
             if (respense.ok) {
                 localStorage.setItem('idToken', JSON.stringify(data));
                 dispatch(authActions.login());
-                navigate('/home');
+                // navigate('/home');
+                navigate('/compose');
+                localStorage.setItem("email", data.email.replace(/[.]/g, ""));
             } else {
                 throw data.error;
             }
