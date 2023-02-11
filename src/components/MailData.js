@@ -64,7 +64,8 @@ const MailData = (props) => {
         </div>
         <div className={showBody ? classes.body : classes.notBody}>
           <div>{props.mail.text}</div>
-          <i onClick={removeMailHandler} className="ri-delete-bin-6-fill"></i>
+          <button className={classes.button} onClick={removeMailHandler}>DELETE</button>
+          {console.log(props.mail)}
         </div>
       </div>
     </div>
