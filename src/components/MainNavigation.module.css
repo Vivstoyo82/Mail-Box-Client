@@ -1,0 +1,53 @@
+.mainNav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #b2fefa, #dda0dd);
+    padding: 5px 5 15px 0;
+    border-bottom: 5px linear-gradient(to right, #b2fefa, #dda0dd);
+    z-index: 2;
+  }
+  
+  .mainNav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mainNav li {
+    list-style: none;
+    margin: 0 40px 0 20px;
+  }
+  
+  .mainNav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+  .mainNav .welcome a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: Helvetica;
+    font-size: 40px;
+  }
+  
+  .mainNav .auth a {
+    display: inline-block;
+    align-items: center;
+    /* gap: 0.5rem; */
+    /* color : black; */
+    /* background : #7600dc; */
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  }
+  
+  .mainNav a.active {
+    padding: 6px 25px 5px 20px;
+    box-shadow: 2px 2px 5px none;
+    border-radius: 10px;
+    background-color: #dda0dd;
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  }

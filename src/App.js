@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from "react-router-dom";
-import Signup from './components/Signup';
-import Home from './components/Home';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
 import { Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
-import Compose from './components/Compose';
+
 
 function App() {
 
@@ -26,11 +26,6 @@ function App() {
           path='/home'
           element={isLoggedIn ? <Home /> : <Navigate to='/login' />}
         />
-         <Route 
-         path="/compose"
-         element={isLoggedIn ? <Compose /> : <Navigate to='/compose' />}
-          />
-          
         <Route path='/login' element={<Signup />} />
       </Routes>
     </Layout>
